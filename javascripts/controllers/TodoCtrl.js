@@ -1,29 +1,15 @@
 "use strict";
 
-app.controller("TodoCtrl", function($scope){
+app.controller("TodoCtrl", function($scope, ItemFactory){
   $scope.welcome = "hello";
   $scope.showListView = true;
   $scope.newTask = {};
-  $scope.items = [
-    {
-      id: 0,
-      task : "mow the lawn",
-      isCompleted: true,
-      assignedTo: "Dani"
-    },
-     {
-      id: 1,
-      task : "grade quizzes",
-      isCompleted: false,
-      assignedTo: "Zoe"
-    },
-     {
-      id: 2,
-      task : "take nap",
-      isCompleted: false,
-      assignedTo: "Nathan"
-    }
-  ];
+  $scope.items = [];
+
+//this function should print out the todoSeed.json file
+  ItemFactory.getItemList().then(function(fbItems){
+    $scope.items = fbItems;
+  });
 
 $scope.allItems = function(){
   console.log("you clicked all items")
