@@ -36,5 +36,11 @@ $scope.addNewItem = function(){
   })
 }
 
+$scope.deleteItem = function(itemId){ //passed this in on click here and in HTML - we delete item.id in html and this is why we created items with ids
+  console.log("you deleted me");
+  ItemFactory.deleteItem(itemId).then(function(response){
+    getItems(); //once it is deleted then refresh the DOM
+  })
+}
 
 });

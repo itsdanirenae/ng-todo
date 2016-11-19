@@ -16,7 +16,7 @@ app.factory("ItemFactory", function($q, $http, FIREBASE_CONFIG){
           reject(errorResponse);
         });
     });
-  }
+  };
 
   var postNewItem = function(newItem){
     return $q((resolve, reject)=>{
@@ -34,8 +34,22 @@ app.factory("ItemFactory", function($q, $http, FIREBASE_CONFIG){
           reject(postError)
         });
     });
-  }
+  };
+
+  var deleteItem = function(itemId){
+    return $q((resolve, reject)=>{
+      $http.delete(`${FIREBASE_CONFIG.databaseURL}/items/${itemId}.json`)
+      .success(function(deleteResponse){
+        resolve(deleteResponse);
+      })
+      .error(function(deleteError){
+        reject(deleteError);
+      });
+    });
+  };
 
 
-return {getItemList:getItemList, postNewItem:postNewItem}
+return {getItemList:getItemList, postNewItem:postNewItem, deleteItem:deleteItem};
 });
+
+
