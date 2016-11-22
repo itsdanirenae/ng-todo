@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module("TodoApp", []);
+var app = angular.module("TodoApp", ['ngRoute']);
 
 //BELOW: all the ways to call firebase
 // app.config(function(){
