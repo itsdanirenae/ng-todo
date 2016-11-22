@@ -31,7 +31,7 @@ app.factory("ItemFactory", function($q, $http, FIREBASE_CONFIG){
           resolve(postResponse);
         })
         .error(function(postError){
-          reject(postError)
+          reject(postError);
         });
     });
   };
@@ -74,7 +74,7 @@ app.factory("ItemFactory", function($q, $http, FIREBASE_CONFIG){
           resolve(editResponse);
         })
         .error(function(editError){
-          reject(editError)
+          reject(editError);
         });
     });
   };

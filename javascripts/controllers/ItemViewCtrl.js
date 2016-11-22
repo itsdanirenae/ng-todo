@@ -9,5 +9,5 @@ app.controller("ItemViewCtrl", function($scope, $routeParams, ItemFactory){
   ItemFactory.getSingleItem(itemId).then(function(oneItem){
       oneItem.id = itemId;
       $scope.selectedItem = oneItem;
-  })
+  });
 });
