@@ -17,4 +17,9 @@ $scope.deleteItem = function(itemId){ //passed this in on click here and in HTML
   })
 }
 
+$scope.inputChange = function(thingy){
+  ItemFactory.editItem(thingy).then(function(response){
+  });
+};
+
 });

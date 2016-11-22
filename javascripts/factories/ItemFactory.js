@@ -63,7 +63,7 @@ app.factory("ItemFactory", function($q, $http, FIREBASE_CONFIG){
 
  var editItem = function(editItem){
     return $q((resolve, reject)=>{
-      $http.post(`${FIREBASE_CONFIG.databaseURL}/items/${editItem.id}.json`,
+      $http.put(`${FIREBASE_CONFIG.databaseURL}/items/${editItem.id}.json`,
           JSON.stringify({
           assignedTo: editItem.assignedTo,
           isCompleted: editItem.isCompleted,
