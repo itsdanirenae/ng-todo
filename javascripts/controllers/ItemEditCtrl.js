@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("ItemEditCtrl", function($scope,  $location, $routeParams, ItemFactory){
+app.controller("ItemEditCtrl", function($scope, $location, $routeParams, ItemFactory){
   $scope.newTask = {};
     let itemId = $routeParams.id;
 

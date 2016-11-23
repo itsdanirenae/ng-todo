@@ -10,7 +10,7 @@ let logMeIn = function(loginStuff){
     console.log(didLogin);
     return UserFactory.getUser(didLogin.uid);
   }).then(function(userCreds){
-      $rootScope = userCreds; //the scope that's available no matter what root youre in
+      $rootScope.user = userCreds; //the scope that's available no matter what root youre in
       $scope.login = {};
       $scope.register = {};
       $location.url("/items/list");
